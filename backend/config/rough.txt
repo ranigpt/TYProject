@@ -1,0 +1,69 @@
+
+
+  passport.use(
+
+    new OAuth2Strategy({
+
+        clientID: clientid,
+        clientSecret: clientsecret,
+        callbackURL: "/auth/google/callback",
+        scope: ["profile" , "email"],
+        passReqToCallback: true
+    },
+
+     async (request,accessToken , refreshToken , profile , done)=>{
+      
+        try{
+
+            console.log("prfile",profile);
+            let user = await User.findOne({Email : profile.emails[0].value})
+
+            if(!user){
+
+                user = new User({
+                    Name : profile.displayName,
+                    Email : profile.emails[0].value,
+                    Dob : null,
+                    Dp : profile.photos[0].value,
+                    Password : null,
+                    
+                });
+
+                await user.save();
+            }
+
+
+            return done(null, user);
+
+        }catch(err){
+
+            return done(err,null);
+        }
+     }
+    )
+)
+
+//sending user information & storing data to express-session
+passport.serializeUser((user, done) => {
+
+    done(null, user);
+});
+
+
+passport.deserializeUser((user, done) => {
+
+    done(null, user);
+});
+
+ app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+
+app.get(
+    "/auth/google/callback",
+    passport.authenticate("google", {
+        failureRedirect: "http://localhost:5173/login",
+    }),
+    (req, res) => {
+        // Successful authentication, redirect to the homepage
+        res.redirect("http://localhost:5173/");
+    }
+)
