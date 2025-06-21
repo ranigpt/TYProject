@@ -1,6 +1,6 @@
 BlueSkillz - Unleash Your Potential 👷‍♂️🛠️
 
-Video Link :- Working video Link
+Video Link :- [Working video Link](click)
 
 BlueSkillz is a professional networking platform built specifically for blue-collar workers to showcase their skills, work experience, and achievements using multimedia content. Think of it as LinkedIn for blue-collar professionals, with a focus on visibility, empowerment, and career growth.
 
