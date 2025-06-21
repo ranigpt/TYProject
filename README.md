@@ -1,5 +1,7 @@
 BlueSkillz - Unleash Your Potential 👷‍♂️🛠️
+
 Video Link :- [https://www.linkedin.com/posts/rani-gupta2_mern-fullstackdeveloper-bluecollarjobs-activity-7329057844408799232-OU9E?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8WwtgBbPp_H6H7ANfkZ89zVEYiXmvLq-M](url)
+
 BlueSkillz is a professional networking platform built specifically for blue-collar workers to showcase their skills, work experience, and achievements using multimedia content. Think of it as LinkedIn for blue-collar professionals, with a focus on visibility, empowerment, and career growth.
 
 🚀 Features
